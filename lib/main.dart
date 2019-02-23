@@ -123,10 +123,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildLocationField() {
     return LocationFormField(
       initialValue: null,
+        //LocationData(
+//          address: 'test',
+//          latitude: 0.0,
+//          longitude: 0.0),
       validator: (LocationData value) {
         print('validator location');
         if (value.address == null || value.address.isEmpty) {
-          return 'Please choose a location';
+          return 'No valid location found';
         }
       },
       onSaved: (LocationData value) {

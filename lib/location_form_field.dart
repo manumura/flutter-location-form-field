@@ -49,14 +49,14 @@ class _LocationFormFieldState extends FormFieldState<LocationData> {
   Widget _buildLocationFormField() {
     return Column(
       children: <Widget>[
-        TextFormField(
+        TextField(
           focusNode: _addressInputFocusNode,
           controller: _addressInputController,
-          validator: (String value) {
-            if (this.value.address == null || this.value.address.isEmpty) {
-              return 'No valid location found.';
-            }
-          },
+//          validator: (String value) {
+//            if (this.value.address == null || this.value.address.isEmpty) {
+//              return 'No valid location found.';
+//            }
+//          },
           decoration: InputDecoration(labelText: 'Address'),
         ),
         SizedBox(height: 10.0),
@@ -111,8 +111,8 @@ class _LocationFormFieldState extends FormFieldState<LocationData> {
 
     if (lat != null && lng != null) {
       LocationData(address: address, latitude: lat, longitude: lng);
-    } else {
-      return;
     }
+
+    // Display new location on map
   }
 }
